@@ -28,10 +28,6 @@ namespace Hotel.WebUI.Controllers
 		{
 			return PartialView();
 		}
-		public PartialViewResult ContentBodyPartial()
-		{
-			return PartialView();
-		}
 		public PartialViewResult FooterPartial()
 		{
 			return PartialView();

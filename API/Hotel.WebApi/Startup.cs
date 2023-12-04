@@ -54,6 +54,17 @@ namespace Hotel.WebApi
 			services.AddScoped<ITestimonialDal, EfTestimonialDal>();
 			services.AddScoped<ITestimonialService, TestimonialManager>();
 
+			services.AddAutoMapper(typeof(Startup));
+			//services.AddScoped<>
+
+			services.AddCors(opt =>
+			{
+				opt.AddPolicy("hotelApiCors", opts =>
+				{
+					opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+				});
+			});
+
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -74,6 +85,8 @@ namespace Hotel.WebApi
 			{
 				endpoints.MapControllers();
 			});
+
+			app.UseCors("hotelApiCors");
 		}
 	}
 }
