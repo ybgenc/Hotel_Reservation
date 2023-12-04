@@ -47,6 +47,13 @@ namespace Hotel.WebApi
 
 			services.AddScoped<IServiceDal, EfServiceDal>();
 			services.AddScoped<IServiceService, ServiceManager>();
+
+			services.AddScoped<ISubscribeDal, EfSubscribeDal>();
+			services.AddScoped<ISubscribeService, SubscribeManager>();
+
+			services.AddScoped<ITestimonialDal, EfTestimonialDal>();
+			services.AddScoped<ITestimonialService, TestimonialManager>();
+
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
