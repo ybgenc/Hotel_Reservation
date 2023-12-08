@@ -54,6 +54,12 @@ namespace Hotel.WebApi
 			services.AddScoped<ITestimonialDal, EfTestimonialDal>();
 			services.AddScoped<ITestimonialService, TestimonialManager>();
 
+			services.AddScoped<IAboutDal, EfAboutDal>();
+			services.AddScoped<IAboutService, AboutManager>();
+
+			services.AddScoped<IVideoDal, EfVideoDal>();
+			services.AddScoped<IVideoService, VideoManager>();	
+
 			services.AddAutoMapper(typeof(Startup));
 			//services.AddScoped<>
 

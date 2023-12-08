@@ -3,6 +3,7 @@ using Hotel.BusinessLayer.Concrete;
 using Hotel.DataAccessLayer.Abstract;
 using Hotel.DataAccessLayer.Concrete;
 using Hotel.DataAccessLayer.EntityFramework;
+using Hotel.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -29,6 +30,9 @@ namespace Hotel.WebUI
 		{
 			services.AddHttpClient();
 			services.AddControllersWithViews();
+			services.AddAutoMapper(typeof(Startup));
+			services.AddDbContext<Context>();
+			services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<Context>();
 
 
 

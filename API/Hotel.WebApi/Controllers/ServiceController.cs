@@ -26,7 +26,7 @@ namespace Hotel.WebApi.Controllers
 			_serviceService.TInsert(service);
 			return Ok();
 		}
-		[HttpDelete]
+		[HttpDelete("{id}")]
 		public IActionResult DeleteService(int id) 
 		{  
 			var values = _serviceService.TGetByID(id);
